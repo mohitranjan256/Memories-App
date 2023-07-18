@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import Router from './routing/router.js';
 import userRouter from './routing/User-router.js';
 import postRouter from './routing/Post-routes.js';
 import cors from 'cors';
@@ -9,6 +10,7 @@ dotenv.config();
 //middleware
 app.use(cors());
 app.use(express.json());
+app.use("",Router);
 app.use("/user",userRouter);
 app.use("/posts",postRouter);
 
